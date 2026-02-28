@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="main" style="margin-left:0;">
+
+    <div class="topbar">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Dashboard Stats -->
+    <div class="stats">
+        <div class="glass">
+            <h3>Present Days</h3>
+            <p>1</p>
+        </div>
+        <div class="glass">
+            <h3>Absent Days</h3>
+            <p>1</p>
+        </div>
+        <div class="glass">
+            <h3>Attendance %</h3>
+            <p>50%</p>
+        </div>
+    </div>
+
+    <!-- Reports Section -->
+    <div class="glass">
+        <h2>Reports</h2>
+
+        <!-- Filter -->
+        <input type="date" id="studentFilterDate">
+        <button onclick="filterStudentReports()">Filter</button>
+
+        
+        <br>
+        <button onclick="downloadStudentCSV()">Download CSV</button>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

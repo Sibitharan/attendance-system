@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <div onclick="showPage('dashboard')">Dashboard</div>
+    <div onclick="showPage('attendance')">Attendance Records</div>
+    <div onclick="showPage('students')">Students</div>
+    <div onclick="showPage('reports')">Reports</div>
+</div>
+
+<div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ================= DASHBOARD ================= -->
+    <div id="dashboard" class="page">
+        <div class="stats">
+            <div class="glass">
+                <h3>Total Students</h3>
+                <p>2</p>
+            </div>
+            <div class="glass">
+                <h3>Present Today</h3>
+                <p>1</p>
+            </div>
+            <div class="glass">
+                <h3>Absent Today</h3>
+                <p>1</p>
+            </div>
+            <div class="glass">
+                <h3>Attendance %</h3>
+                <p>50%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ATTENDANCE ================= -->
+    <div id="attendance" class="page" style="display:none;">
+        <div class="glass">
+            <h2>Attendance Records</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Sibitharan S</td>
+                    <td>2322KA50</td>
+                    <td>Present</td>
+                </tr>
+                <tr>
+                    <td>Shyam N</td>
+                    <td>2322KA51</td>
+                    <td>Absent</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ================= STUDENTS ================= -->
+    <div id="students" class="page" style="display:none;">
+        <div class="glass">
+            <h2>Students Records</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td>Sibitharan S</td>
+                    <td>2322KA50</td>
+                    <td>III Bsc Cs</td>
+                </tr>
+                <tr>
+                    <td>Shyam N</td>
+                    <td>2322KA51</td>
+                    <td>III Bsc Cs</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ================= REPORTS ================= -->
+    <div id="reports" class="page" style="display:none;">
+        <div class="glass">
+            <h2>Reports</h2>
+
+            <!-- Filter -->
+            <input type="date" id="adminFilterDate">
+            <button onclick="filterAdminReports()">Filter</button>
+
+            <table id="adminReportTable">
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr data-date="2026-02-25">
+                    <td>2026-02-25</td>
+                    <td>Sibitharan S</td>
+                    <td>Present</td>
+                </tr>
+
+                <tr data-date="2026-02-25">
+                    <td>2026-02-25</td>
+                    <td>Shyam N</td>
+                    <td>Absent</td>
+                </tr>
+
+                <tr data-date="2026-02-24">
+                    <td>2026-02-24</td>
+                    <td>Sibitharan S</td>
+                    <td>Present</td>
+                </tr>
+            </table>
+
+            <br>
+            <button onclick="downloadAdminCSV()">Download CSV</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

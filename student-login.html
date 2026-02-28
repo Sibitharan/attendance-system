@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="center-container">
+    <div class="glass">
+        <h2>Student Login</h2>
+
+        <form onsubmit="studentLogin(); return false;">
+    <input type="text" id="studentUsername" placeholder="Username"><br><br>
+    <input type="password" id="studentPassword" placeholder="Password"><br><br>
+    <button type="submit">Login</button>
+</form>
+        <p id="studentError" style="color:red;"></p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

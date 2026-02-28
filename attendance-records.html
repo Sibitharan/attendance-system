@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Attendance Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#050517,#0c0c2d);
+    display:flex;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-right:1px solid rgba(255,255,255,0.1);
+    padding:30px 20px;
+    position:relative;
+}
+
+.menu-item{
+    padding:15px 20px;
+    margin-bottom:15px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.15);
+    text-align:center;
+}
+
+.menu-item:hover{
+    background:rgba(169,112,255,0.2);
+}
+
+.active{
+    background:linear-gradient(135deg,#a970ff,#7f5cff);
+    box-shadow:0 0 20px #a970ff;
+}
+
+/* Purple Glow Shape */
+.sidebar::before{
+    content:"";
+    position:absolute;
+    top:80px;
+    right:-100px;
+    width:200px;
+    height:200px;
+    background:#b388ff;
+    transform:rotate(45deg);
+    filter:blur(80px);
+    opacity:0.7;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main{
+    flex:1;
+    padding:60px 80px;
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:30px;
+    font-weight:600;
+}
+
+/* Search + Export */
+.top-controls{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+input[type="text"]{
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    color:#fff;
+    outline:none;
+}
+
+button{
+    padding:12px 25px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    color:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:linear-gradient(135deg,#a970ff,#7f5cff);
+    box-shadow:0 0 10px #a970ff;
+}
+
+/* ================= TABLE CARD ================= */
+
+.table-card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    padding:15px 10px;
+    color:#ccc;
+    font-weight:500;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+td{
+    padding:18px 10px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.present{
+    color:#4dff88;
+    font-weight:500;
+}
+
+.absent{
+    color:#ff5e5e;
+    font-weight:500;
+}
+
+/* Decorative Floating Circle */
+.circle{
+    position:absolute;
+    bottom:80px;
+    right:120px;
+    width:50px;
+    height:50px;
+    background:#a970ff;
+    border-radius:50%;
+    opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="menu-item">Dashboard</div>
+    <div class="menu-item active">Attendance Records</div>
+    <div class="menu-item">Students</div>
+    <div class="menu-item">Schedule & Devices</div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+    <h1>Attendance Records</h1>
+
+    <div class="top-controls">
+        <input type="text" placeholder="dd/mm/yyyy">
+        <button>Search</button>
+        <button>Export CSV</button>
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>23128052</td>
+                    <td>Sibitharan S</td>
+                    <td>12/12/2026</td>
+                    <td>09:00 AM</td>
+                    <td class="present">Present</td>
+                </tr>
+                <tr>
+                    <td>23128053</td>
+                    <td>Shyam N</td>
+                    <td>12/12/2026</td>
+                    <td>–</td>
+                    <td class="absent">Absent</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="circle"></div>
+
+</body>
+</html>
